@@ -1,0 +1,9 @@
+form {
+    .error-message {
+        color: $accent;
+    }
+}
+
+form > * {
+    margin-top: 1em;
+}

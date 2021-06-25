@@ -13,8 +13,17 @@
                 <a class="nav-link <%= locals[:link]%>" href="#">Link</a>
             </li>
             </ul>
-            <div class="d-flex">
-                <a class="nav-link <%= locals[:link]%>" href="#">Login</a>
+            <div class="d-flex align-items-center">
+                    <% if logged_in? %>
+                        <%= current_user.first_name %>
+                        <a class="nav-link <%= locals[:link]%>" href="<%= logout_path%>">
+                            Logout
+                        </a>
+                    <% else %>
+                    <a class="nav-link <%= locals[:link]%>" href="<%= login_path%>">
+                        Login
+                    </a>
+                    <% end %>
             </div>
           
         </div>

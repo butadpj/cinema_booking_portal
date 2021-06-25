@@ -1,0 +1,58 @@
+<section class="register-page">
+
+<main>
+    <h2>Create your Account</h2>
+    
+        
+        <%= form_with model: @user do |f| %>
+            <div class="form-group">
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name, class: "form-control", placeholder: "John" %>
+            <% @user.errors.full_messages_for(:first_name).each do |message| %>
+            <div class="error-message"><%= message%></div>
+            <% end %>
+            </div>
+            
+            <div class="form-group">
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name, class: "form-control", placeholder: "Doe" %>
+            <% @user.errors.full_messages_for(:last_name).each do |message| %>
+            <div class="error-message"><%= message%></div>
+            <% end %>
+            </div>
+
+            <div class="form-group">
+            <%= f.label :mobile_number %>
+            <%= f.text_field :mobile_number, class: "form-control", placeholder: "09xxxxxxxxx"  %>
+            <% @user.errors.full_messages_for(:mobile_number).each do |message| %>
+            <div class="error-message"><%= message%></div>
+            <% end %>
+            </div>
+        
+            <div class="form-group">
+            <%= f.label :email %>
+            <%= f.email_field :email, class: "form-control", placeholder: "john_doe@gmail.com" %>
+            <% @user.errors.full_messages_for(:email).each do |message| %>
+            <div class="error-message"><%= message%></div>
+            <% end %>
+            </div>
+            
+            <div class="form-group">
+            <%= f.label :password %>
+            <%= f.password_field :password, class: "form-control" %>
+            <% @user.errors.full_messages_for(:password).each do |message| %>
+            <div class="error-message"><%= message%></div>
+            <% end %>
+            </div>
+            
+            <div class="form-group">
+            <%= f.submit "Register", class: "submit-btn btn btn-outline btn-primary"%>
+            </div>
+        <% end %>
+        <hr>
+        <p><a href="<%= root_path%>">Go back to home</a></p>
+</main>
+    
+</section>    
+
+   

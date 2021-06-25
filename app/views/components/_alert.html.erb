@@ -1,0 +1,5 @@
+<% if flash[:message] || flash[:type] %>
+    <div class="alert alert-<%= flash[:type] %>">
+        <%= flash[:message] %>
+    </div>
+<% end %>
