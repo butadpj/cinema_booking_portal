@@ -1,0 +1,17 @@
+.app {
+    height: 500vh;
+    
+}
+
+main {
+    margin: 0 auto;
+    width: 90%;
+    padding-top: 7em;
+ 
+    header {
+        text-align: center;
+        font-weight: bold;
+        font-size: 2em;
+        color: $primary-light;
+    }
+}

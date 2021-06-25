@@ -1,1 +1,21 @@
-<h2>Home page</h2>
+
+<%= render 'components/navbar', :locals => {:home => "active"} %>
+
+<main>
+    <header> Now Showing </header>
+    <hr>
+    
+
+    <section class="movies">
+        <div class="movie-card">
+            <div class="movie">
+                <img src="" alt="movie-thumbnail"> 
+                <div class="text-overlay">
+                    <%= render "components/button", :locals => {:text => "Book a seat", :color => "primary"} %>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
