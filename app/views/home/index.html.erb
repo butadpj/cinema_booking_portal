@@ -1,40 +1,40 @@
 
 <%= render 'components/navbar', :locals => {:home => "active"} %>
 
-<main>
-    <%= render "components/alert-close" %>
-    <header> Now Showing </header>
-    <hr>
+<section class="home-page">
+    <main>
+        <header> Now Showing </header>
+        <hr>
     
-    
-    <section class="movies container">
-        <div class="row">
-            <div class="movie-card">
-                <div class="movie">
-                    <%# <img src="" alt="movie-thumbnail">  %>
-                    <%= image_tag("valo.jpg", alt: "movie-thumbnail", class: "movie-thumbnail") %>
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <div class="movie-title">Valo Movie</div>
-                            <%= render "components/button", :locals => {:text => "Book a seat", :color => "secondary-dark"} %>
+        <section class="movies container">
+            <div class="row">
+                <div class="movie-card">
+                    <div class="movie">
+                        <%# <img src="" alt="movie-thumbnail">  %>
+                        <%= image_tag("valo.jpg", alt: "movie-thumbnail", class: "movie-thumbnail") %>
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <div class="movie-title">Valo Movie</div>
+                                <%= render "components/button", :locals => {:text => "Book a seat", :color => "secondary-dark"} %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="movie">
+                        <%# <img src="" alt="movie-thumbnail">  %>
+                        <%= image_tag("valo.jpg", alt: "movie-thumbnail", class: "movie-thumbnail") %>
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <div class="movie-title">Valo Movie</div>
+                                <%= render "components/button", :locals => {:text => "Book a seat", :color => "secondary"} %>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="movie-card">
-                <div class="movie">
-                    <%# <img src="" alt="movie-thumbnail">  %>
-                    <%= image_tag("valo.jpg", alt: "movie-thumbnail", class: "movie-thumbnail") %>
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <div class="movie-title">Valo Movie</div>
-                            <%= render "components/button", :locals => {:text => "Book a seat", :color => "secondary"} %>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-       
-    </section>
+        
+        </section>
 
-</main>
+    </main>
+</section>

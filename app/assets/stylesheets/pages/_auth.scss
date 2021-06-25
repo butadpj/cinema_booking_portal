@@ -1,0 +1,14 @@
+.auth-page {
+    display: flex;
+    justify-content: center;
+
+    main {
+        padding-top: 3em;
+        width: 90%;
+        max-width: 30rem;
+
+        h2 {
+            margin-bottom: 1.5em;
+        }
+    }
+}
