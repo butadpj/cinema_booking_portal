@@ -1,0 +1,27 @@
+<%= render 'components/navbar', :locals => {:admin => "active"} %>
+<section class="admin-page">
+    <main>
+        <div class="dashboard">
+            <div class="cinemas">
+                <h2><a href="<%= cinemas_path%>">Cinemas</a></h2>
+                <br>
+                <div>
+                    <h4>Total Cinemas: <%= @cinemas.count%></h4>
+                    
+                </div>
+            <div>
+            <hr>
+            <div class="movies">
+                <h2><a href="<%= movies_path%>">Movies</a></h2>
+                <br>
+                <div>
+                    <h4>Total Movies: <%= @movies.count%></h4>
+                    
+                </div>
+            <div>
+                
+            
+        </div>
+         
+    </main>
+</section>

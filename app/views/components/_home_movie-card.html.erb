@@ -1,0 +1,22 @@
+
+<div class="movie-card">
+    <div class="movie">
+        <%# <img src="" alt="movie-thumbnail">  %>
+        <%= image_tag  locals[:movie_thumbnail], alt: "movie-thumbnail", class: "movie-thumbnail" %>
+        <div class="overlay">
+            <div class="overlay-content">
+                <div class="movie-title"><%= locals[:movie_title]%></div>
+                <% if !logged_in? %>
+                    <a href="<%= login_path %>" class="rm-decor">
+                        <%= render "components/button", :locals => {:text => "Book a seat", :color => "secondary-dark"} %>
+                    </a> 
+                <% else %>
+                    <a href="#" class="rm-decor">
+                        <%= render "components/button", :locals => {:text => "Book a seat", :color => "secondary-dark"} %>
+                    </a>    
+                <% end %>
+                     
+            </div>
+        </div>
+    </div>
+</div>

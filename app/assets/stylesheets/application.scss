@@ -1,5 +1,6 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
+@import "abstracts/helpers";
 
 @import "base/reset";
 @import "base/typography";
@@ -7,6 +8,8 @@
 @import "components/navbar";
 @import "components/buttons";
 @import "components/form";
+@import "components/movie-card";
 
 @import "pages/home";
 @import "pages/auth";
+@import "pages/admin";

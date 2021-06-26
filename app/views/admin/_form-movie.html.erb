@@ -1,0 +1,47 @@
+<%= form_with model: movie  do |form| %>
+
+    <% if flash[:message] || flash[:type] %>
+        <div class="alert alert-<%= flash[:type] %>">
+            <%= flash[:message] %>
+        </div>
+    <% end %>
+    <div>
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+        <% movie.errors.full_messages_for(:title).each do |message| %>
+        <div class="error-message"><%= message%></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :description %><br>
+        <%= form.text_field :description %>
+        <% movie.errors.full_messages_for(:description).each do |message| %>
+        <div class="error-message"><%= message%></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :cinema_id %><br>
+        <select name="movie[cinema_id]" id="movie_cinema_id">
+            <option value=""></option>   
+            <% if locals[:cinemas] %>
+                <% locals[:cinemas].each do |c| %>
+                    <option value="<%= c.id %>"><%= c.name %></option>
+                <% end %>
+            <% end %>
+        </select>
+        <% movie.errors.full_messages_for(:cinema_id).each do |message| %>
+        <div class="error-message"><%= message%></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :thumbnail %><br>
+        <%= form.file_field :thumbnail %>       
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>

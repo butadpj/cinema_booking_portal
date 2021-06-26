@@ -1,26 +1,26 @@
  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light">
     <div class="container-fluid px-5">
-        <a class="navbar-brand me-5" href="#">Cinema Booking Portal</a>
+        <a class="navbar-brand me-5" href="<%= root_path%>">Cinema Booking Portal</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link <%= locals[:home]%>" aria-current="page" href="/">Home</a>
+                <a class="nav-link <%= locals[:home]%>" aria-current="page" href="<%= root_path%>">Movies</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <%= locals[:link]%>" href="#">Link</a>
+                <a class="nav-link <%= locals[:admin]%>" href="/admin">Admin</a>
             </li>
             </ul>
             <div class="d-flex align-items-center">
                     <% if logged_in? %>
-                        <%= current_user.first_name %>
-                        <a class="nav-link <%= locals[:link]%>" href="<%= logout_path%>">
+                        <span class="me-3"><%= current_user.first_name %></span>
+                        <a class="nav-link" href="<%= logout_path%>">
                             Logout
                         </a>
                     <% else %>
-                    <a class="nav-link <%= locals[:link]%>" href="<%= login_path%>">
+                    <a class="nav-link auth-link" href="<%= login_path%>">
                         Login
                     </a>
                     <% end %>

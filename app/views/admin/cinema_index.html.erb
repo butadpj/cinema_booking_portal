@@ -1,0 +1,42 @@
+<%= render 'components/navbar', :locals => {:admin => "active"} %>
+<section class="admin-page">
+    <main>
+        <h2>Cinema</h2>
+        <br>
+        <a href="<%= new_cinema_path %>" class="rm-decor">
+            <%= render "components/button-icon", :locals => {:text => "Add Cinema", color: "secondary", icon: "add"} %>
+        </a>
+       
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Cinema name</th>
+                    <th scope="col">Available seats</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+                <tbody> 
+                    <% @cinemas.each do |cinema| %>
+                        <tr>
+                            <th scope="row"><%= cinema.id%></th>
+                            <td class="">
+                                <%= link_to cinema.name, cinema %>
+                            </td>
+                            <td><%= cinema.available_seats%>/10</td>
+                            <td class="action-buttons">
+                                <a href="/admin/cinemas/<%= cinema.id %>/edit" class="rm-decor" >
+                                    <%= render "components/button", :locals => {:text => "Edit", :color => "primary"} %>
+                                </a>
+                            
+                                <a href="/admin/cinemas/<%= cinema.id %>" class="rm-decor" data-method="delete" data-confirm="Are you sure?">
+                                    <%= render "components/button", :locals => {:text => "Delete", :color => "accent"} %>
+                                </a>
+                            </td>
+                        </tr>
+                    <% end %> 
+                </tbody>
+        </table>
+         
+    </main>
+</section>
